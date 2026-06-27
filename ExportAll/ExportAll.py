@@ -14,7 +14,11 @@ def get_tracked_projects():
         return []
 
 def get_clean_name(doc_name):
-    return re.sub(r'\s+v\d+$', '', doc_name, flags=re.IGNORECASE).strip()
+    # Strip Fusion360's version suffix, e.g. "Drawer Reinforcement v8" -> "Drawer Reinforcement"
+    name = re.sub(r'\s+v\d+$', '', doc_name, flags=re.IGNORECASE).strip()
+    # Replace '/' with '-' to avoid phantom subdirectories
+    name = name.replace('/', '-')
+    return name
 
 def get_folder_path(data_file):
     parts = []

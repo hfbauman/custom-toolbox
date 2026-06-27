@@ -15,8 +15,8 @@ def get_fusion_folder_path(data_file):
     return os.path.join(*parts) if parts else ""
 
 def get_clean_name(doc_name):
-    # Strip Fusion360's version suffix, e.g. "Drawer Reinforcement v8" -> "Drawer Reinforcement"
-    return re.sub(r'\s+v\d+$', '', doc_name, flags=re.IGNORECASE).strip()
+        # Strip Fusion360's version suffix, e.g. "Drawer Reinforcement v8" -> "Drawer Reinforcement"
+        return re.sub(r'\s+v\d+$', '', doc_name, flags=re.IGNORECASE).strip()
 
 class DocumentSavedHandler(adsk.core.DocumentEventHandler):
     def __init__(self):
