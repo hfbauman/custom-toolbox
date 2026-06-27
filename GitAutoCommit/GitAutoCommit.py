@@ -63,9 +63,9 @@ def run(context):
         app = adsk.core.Application.get()
         ui = app.userInterface
 
-        onSaving = DocumentSavingHandler()
-        app.documentSaving.add(onSaving)
-        handlers.append(onSaving)
+        onSaved = DocumentSavingHandler()
+        app.documentSaved.add(onSaved)
+        handlers.append(onSaved)
 
         ui.messageBox("GitAutoCommit is running — it will export and commit on every save.")
     except:
@@ -76,7 +76,7 @@ def stop(context):
     try:
         app = adsk.core.Application.get()
         for handler in handlers:
-            app.documentSaving.remove(handler)
+            app.documentSaved.remove(handler)
         handlers.clear()
     except:
         pass
