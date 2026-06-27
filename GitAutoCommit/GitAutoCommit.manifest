@@ -1,0 +1,8 @@
+{
+	"autodeskProduct":	"Fusion360",
+	"type":	"script",
+	"author":	"hfbauman",
+	"description":	{"": "Auto-commits exported CAD files on save."},
+	"supportedOS":	"windows|mac",
+	"editOnStartup":	false
+}
