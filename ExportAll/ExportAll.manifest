@@ -1,0 +1,8 @@
+{
+	"autodeskProduct":	"Fusion360",
+	"type":	"script",
+	"author":	"hfbauman",
+	"description":	{"": "Exports all files in the project"},
+	"supportedOS":	"windows|mac",
+	"editOnStartup":	false
+}
